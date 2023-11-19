@@ -95,10 +95,26 @@ root.iconphoto(False,image_icon)
 
 # Home Page
 def home_page():
-    page = Frame(root, bg = "#2f4155")
+    page = Frame(root, bg="#2f4155")
     page.place(x=0, y=0, relwidth=1, relheight=1)
-    label = Label(page, text="Welcome to the Steganography App", bg="#2f4155", fg="white", font="arial 16 bold")
-    label.pack(pady=50)
+
+    # Title
+    label = Label(page, text="Welcome to the Steganography App", bg="#2f4155", fg="white", font="arial 20 bold")
+    label.pack(pady=20)      
+
+    # Instructions
+    instructions = Label(page, text="This app allows you to hide and reveal secret messages in images. \n The purpose of this application is safely encode and decode the images. \n The features of this application are as follows: - \n 1. To encode and decode the images. \n 2. To secure it with passwords. ", bg="#2f4155", fg="white", font="arial 10")
+    instructions.pack(pady=10)
+
+    # Image or Logo
+    logo_img = PhotoImage(file="logo.png")
+    logo_label = Label(page, image=logo_img, bg="#2f4155")
+    logo_label.image = logo_img
+    logo_label.pack(pady=20)
+
+    # Additional Information or Tips
+    tips_label = Label(page, text="Tip: You can use this app to send hidden messages securely.", bg="#2f4155", fg="white", font="arial 12 italic")
+    tips_label.pack(pady=10)
 
 # Hide and Show
 def hide_show():
@@ -214,8 +230,28 @@ def hide_show():
 def about_page():
     page = Frame(root, bg="#2f4155")
     page.place(x=0, y=0, relwidth=1, relheight=1)
-    label = Label(page, text="This is the About Us page.", bg="#2f4155", fg="white", font="arial 16 bold")
-    label.pack(pady=50)
+
+    # Title
+    label = Label(page, text="About Us", bg="#2f4155", fg="white", font="arial 20 bold")
+    label.pack(pady=20)
+
+    # Description
+    description = Label(page, text="Steganography Application, version 1.01.01 \n Copyright(C) 2023 Crypotography Foundation \n Licensed under GNU GPL License, Version 1 \n\n E-mail: crypotograpghyfoundation@gmail.com \n Website: https://steganographyapplication.ak.net \n\n We are a team of developers passionate about cybersecurity and digital privacy.", bg="#2f4155", fg="white", font="arial 10")
+    description.pack(pady=10)
+
+    # Team Members
+    members_label = Label(page, text="Team Members:", bg="#2f4155", fg="white", font="arial 16 bold")
+    members_label.pack(pady=10)
+
+    # List of Team Members
+    team_members = [
+        "Darijan Zumarvic - Developer",
+        "Simranpreet Kaur - Developer",
+    ]
+
+    for member in team_members:
+        member_label = Label(page, text=member, bg="#2f4155", fg="white", font="arial 12")
+        member_label.pack()
 
 # Switch to the Home Page by default
 home_page()
