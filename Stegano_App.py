@@ -12,6 +12,7 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
+# Create appliction window
 root = Tk()
 root.title("Steganography - Hide a Secret Text Message in an Image")
 root.geometry("700x500+150+180")
@@ -89,10 +90,6 @@ def read_salt(filename):
 image_icon = PhotoImage(file = "logo.png")
 root.iconphoto(False,image_icon)
 
-#logo
-#logo = PhotoImage(file = "label1.png")
-#Label(root,image = logo, bg = "#2f4155").place(x = 25, y = 15)
-
 # Home Page
 def home_page():
     page = Frame(root, bg="#2f4155")
@@ -120,12 +117,7 @@ def home_page():
 def hide_show():
     page = Frame(root, bg = "#2f4155")
     page.place(x=0, y=0, relwidth=1, relheight=1)
-    #label = Label(page, text="Hide and Show", bg="#2f4155", fg="white", font="arial 16 bold")
-    #label.pack(pady=50)
-
-    #logo
-    #logo = PhotoImage(file = "label1.png")
-    #Label(root,image = logo, bg = "#2f4155").place(x = 25, y = 15)
+    
 
     Label(root,text = "CYBER SCIENCE", bg = "#2d4155", fg = "white", font = "arial 25 bold").place( x = 15, y = 20)    # the x value used to be 100 instead of 15 
 
